@@ -1,0 +1,36 @@
+<?php 
+@session_start();
+include "../security/secure.php";
+include "../includes/define.php";
+?>
+
+
+
+
+
+
+<h1>Formulaire HTML</h1>
+        
+        <form action="<?php echo $route["createbibliotheque"]; ?>" method="post">
+            <div class="c100">
+                <label for="nom">Nom : </label>
+                <input type="text" id="nom" name="nom">
+            </div>
+            <div class="c100">
+                <label for="adresse">Adresse : </label>
+                <input type="adresse" id="adresse" name="adresse">
+            </div>
+            <div class="c100">
+                <label for="telephone">Telephone : </label>
+                <input type="text" id="telephone" name="telephone">
+            </div>
+
+ 
+
+
+                <input type="submit" value="Envoyer">
+  
+    
+
+            </div>
+        </form>

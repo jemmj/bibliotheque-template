@@ -1,0 +1,59 @@
+/*--  NAV BAR - Menu navigation --*/
+
+.nav-link
+{	position:relative;
+	left:170px;
+	top: 8px;
+	color: black;
+	font-size:18px;
+	font-family:  inherit;
+	display:flex;
+}
+.nav-link:hover .msborder{
+	width: 20px;
+	height: 5px;
+	border-radius: 5%;
+	background-color:  green;
+}
+.logo
+{	position:absolute;
+	top:1px;
+	left:1px;
+	
+}
+.achat
+{
+	position:absolute;
+	left:525px;
+	width:25px; height:25px;
+}
+.loupe
+{
+	position:absolute;
+	left:500px;
+}
+
+#principal
+{
+border:	solid black 2px;
+background:black;	
+	
+}
+.livrecard
+{
+	top:100px;
+-webkit-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
+-moz-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
+box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
+}
+.livrecard img {
+	width:100px;
+	height:75px;
+}
+
+.footer{
+	margin: 50px;
+}
+
+
+
