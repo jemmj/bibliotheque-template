@@ -1,71 +1,34 @@
 <?php
     //On démarre une nouvelle session
-    session_start();
-    /*On utilise session_id() pour récupérer l'id de session s'il existe.
+@session_start();
+include "../security/secure.php";
+include "../includes/database.php";
+include "../includes/define.php";    /*On utilise session_id() pour récupérer l'id de session s'il existe.
      *Si l'id de session n'existe  pas, session_id() rnevoie une chaine
      *de caractères vide*/
-include "../security/secure.php";
+$sql = "select id_users, nom FROM users";
 
 
     ?>
 
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        			<meta charset="utf-8" />
-      				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      				<title>FORMULAIRE</title>
-      				
-​					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>	
-					<!--lien pour les carrousels-->
-					<link rel="stylesheet" href="assets/owl.carousel.min.css"/>
-                    <link rel="stylesheet" href="assets/owl.theme.default.min.css"/>
-                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/formulaire.css"/>
-    			  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-           			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-​
-    </head>
-
-
-<head>
 
 
 
-</head>
-<body>
 
-<?php
-
-
-//include "login.php";
-
-//@$page=$_GET[""];
-
- //if($page =="" || $page=="page1"){
-    // require_once 'page1.php' ;
-//If($page== "contact"){
-   // require 'contact.php' ;
-//}
-//require_once 'footer.php' ;
-
-?> 
-
-
-
-<h1>Formulaire HTML</h1>
+<h1>creation utilisateurs</h1>
         
-        <form action="formulaire.php" method="post">
+        <form action="<?php echo $route["createusers"];?>" method="post">
+            <div class="c100">
+                <label for="nom">nom : </label>
+                <input type="text" id="nom" name="nom">
+            </div>
             <div class="c100">
                 <label for="prenom">Prénom : </label>
                 <input type="text" id="prenom" name="prenom">
             </div>
             <div class="c100">
-                <label for="mail">Email : </label>
-                <input type="email" id="mail" name="mail">
+                <label for="email">Email : </label>
+                <input type="email" id="email" name="email">
             </div>
             <div class="c100">
                 <label for="age">Age : </label>
@@ -119,22 +82,17 @@ include "../security/secure.php";
 
 <?php
    // Vérifier si le formulaire est soumis 
-   if ( isset( $_POST['submit'] ) ) {
+   //if ( isset( $_POST['submit'] ) ) {
      /* récupérer les données du formulaire en utilisant 
         la valeur des attributs name comme clé 
        */
-     $prenom = $_POST['prenom']; 
-     $age = $_POST['age']; 
-     $email = $_POST['email'];
-     $sexe = $_POST['Sexe'];
-     $pays = $_POST['pays'];
+    // $prenom = $_POST['prenom']; 
+    // $age = $_POST['age']; 
+    // $email = $_POST['email'];
+    // $sexe = $_POST['Sexe'];
+    // $pays = $_POST['pays'];
      // afficher le résultat
-     echo '<h3>Informations récupérées en utilisant POST</h3>'; 
-     echo 'prenom : ' . $prenom . ' Age : ' . $age . ' email  : ' . $email . ' Sexe : ' .$sexe . ' pays : ' . $pays; 
-     exit;
-  }
-?>
-
-</body>
-
-</html>
+    // echo '<h3>Informations récupérées en utilisant POST</h3>'; 
+    // echo 'prenom : ' . $prenom . ' Age : ' . $age . ' email  : ' . $email . ' Sexe : ' .$sexe . ' pays : ' . $pays; 
+    // exit;
+ // }

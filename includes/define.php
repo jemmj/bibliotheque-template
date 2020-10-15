@@ -60,8 +60,14 @@ $route=["auteurlist"=>"../auteur/auteurlist.php",
         "rendrelist"=>"../rendre/rendrelist.php",
         "updaterendre"=>"../rendre/updaterendre.php",
          "formupdaterendre"=>"../rendre/formupdaterendre.php",
+        //----------------users----------------------------
+          "createusers"=>"../users/createusers.php",
+        "deleteusers"=>"../users/deleteusers.php",
+        "formcreateusers"=>"../users/formcreateusers.php",
+        "userslist"=>"../users/userslist.php",
+        "updateusers"=>"../users/updateusers.php",
+         "formupdateusers"=>"../users/formupdateusers.php",
         //--------------------------------------------
-        
         
         
        ];

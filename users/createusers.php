@@ -59,7 +59,7 @@ include "../includes/functions.php";
         <h1>Bases de données MySQL</h1>  
         <?php
         
-        if(@$_POST['prenom']!="" && @$_POST['date']!="" && @$_POST['email']!=""&& @$_POST['']!=""&& @$_POST['email']!=""&& @$_POST['email']!=""&& @$_POST['email']!="" ){
+        if(@$_POST['prenom']!="" && @$_POST['age']!="" && @$_POST['email']!=""){
             
         // Vérifier si le formulaire est soumis 
 //        if ( @$_POST['prenom'] !=""  && @$_POST['nom'] !="" ) {
@@ -67,15 +67,11 @@ include "../includes/functions.php";
             la valeur des attributs name comme clé 
             */
             $prenom = $_POST['prenom'];
-            $nom = $_POST['nom'];
-            $date = $_POST['date']; 
-            $telephone = $_POST['telephone'];
-            $adresse = $_POST['adresse'];
+            $age = $_POST['age'];
             $pays = $_POST['pays'];
             $sexe = $_POST['sexe'];
             $email = $_POST['email'];
-            $genre = $_POST['genre'];
-            $pseudo = $_POST['pseudo'];
+            $role = $_POST['admin'];
             $password = $_POST['password'];
             
             
@@ -85,34 +81,33 @@ include "../includes/functions.php";
             try{
                 
                
-                
-            
-        $sql = "INSERT INTO Users(Prenom,Nom,date,telephone,adresse,pays,sexe,genre,email,pseudo,role,password)";
+       
 
                 
            
                 $sth= $dbco->prepare( $sql);
-                $params=array(
+             
         
                 
 				
-                $params=array(
+                $paramsauteur=array(
                     ':prenom' => $prenom,
-                    ':nom' => $nom,
-                    ':date' => $date,
-                    ':telephone' => $telephone,
-                    ':adresse' => $adresse,
+                    
+                    ':age' => $age,
+                    
                     ':pays' => $pays,
                     ':sexe' => $sexe,
-                    ':genre' => $genre,
+                    
                     ':email' => $email,
-                    ':pseudo' => $pseudo,
+                    
                     ':password' => $password,
-                    ':role' => "admin",);
-                
-                $sth->execute($params);
-                
-               // $conn->exec($sql);
+                    ':role' =>"admin",);
+                     $sql = "INSERT INTO Users(Prenom,age,pays,sexe,email,role,password) VALUE (:prenom,:age,:pays,:sexe,:email,:admin,:password)";
+                $sth->$dbco->prepare($sql);
+                $sth->execute($paramsAuteur);
+                 $id_users=$dbco->lastInserId();
+
+      header('Location:../admin/starter.php?page=userslist');          // $conn->exec($sql);
                 echo 'Entrée ajoutée dans la table';
                 
             }
@@ -123,5 +118,5 @@ include "../includes/functions.php";
             }
         } 
         
-    header('Location:../admin/starter.php?page=userslist'); 
+    
         ?>

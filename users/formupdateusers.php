@@ -1,24 +1,26 @@
 <?php
-session_start();
+@session_start();
 include "../security/secure.php";
 include "../includes/database.php";
+include "../includes/define.php";
 
 $id_users=$_GET['id'];
 
 
 $sql = "select *  FROM users WHERE id_users='$id_users'";
-$sth = $dbco->prepare($sql);
 
+$sth = $dbco->prepare($sql);
 $sth->execute();
-$result = $sth->fetch(PDO::FETCH_ASSOC);
+
+
 
 $id_users=$result['id_users'];
 $prenom=$result['prenom'];
+$nom=$result['nom'];
 $email=$result['email'];
 $sexe=$result['sexe'];
 $age=$result['age'];
-$pays=$result['pays'];
-$nom =$result['nom'];                                      
+$pays=$result['pays'];                                      
 $password = $result['password'];
 $role = $result['admin'];                  
                     
@@ -26,9 +28,9 @@ $role = $result['admin'];
 
                   <link rel="stylesheet" href="style.css">
 
-<h1>Formulaire HTML</h1>
+<h1>Form update users</h1>
 
-        <form action="updateusers.php" method="post">
+        <form action=<?php echo $route["updateusers"]; ?>" method="post">
 
         <input type="hidden" id="id_users" name="id_users" value="<?php echo $id_users;?>">
 

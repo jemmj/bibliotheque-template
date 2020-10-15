@@ -3,15 +3,12 @@
  session_start();
 include "../security/secure.php";
 include "../includes/database.php";
-
+include "../includes/functions.php";
   if(@$_POST['id_users']!=""){
 
 
-	        $servername = 'localhost';
-            $dbusername = 'root';
-            $dbpassword = '';
 
-			$id_users = $_POST['id_users'];
+		
 			$prenom=$_POST['prenom'];
 			$email=$_POST['email'];
 			$age=$_POST['age'];
@@ -34,7 +31,7 @@ $params=array(
 									);
 
 $sth->execute($params);
-  header('Location:userlist.php');
+  
 }
 
 catch(PDOException $e){
@@ -42,4 +39,5 @@ echo "Erreur : " . $e->getMessage();
 }
 
  }
+ header('Location:../admin/starter.php?page=userslist');
 ?>
