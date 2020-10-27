@@ -1,8 +1,9 @@
 <?php
 
- session_start();
+
+ /*session_start();
 include "../security/secure.php";
-include "../includes/database.php";
+include "../includes/database.php";*/
 
 $id_emprunter=$_GET['id'];
 

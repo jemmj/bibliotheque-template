@@ -1,20 +1,17 @@
 <?php
- @session_start();
-include "../security/secure.php";
+
+/*@session_start();
+include "../security/secure.php";*/
 include "../includes/database.php";
-include "../includes/define.php";
+/*include "../includes/define.php";*/
 
 
-$id_editeur=$_GET['id'];
 
 
-$sql = "select *  FROM emprunter WHERE id_emprunter='$id_emprunter'";
 
-$sth=$dbco->prepare($sql);
-$sth->execute();
 
-$id_editeur=$result['id_editeur'];
-$dateemprunt=$result['dateemprunt'];
+
+
 
 
 ?>
@@ -25,7 +22,8 @@ $dateemprunt=$result['dateemprunt'];
 
         <form action="<?php echo $route["updateemprunter"]; ?>" method="post">
 
-		<input type="hidden" id="id_emprunter" name="id_emprunter" value="<?php echo $id_emprunter;?>">
+		<input type="hidden" id="i" name="id_emprunter" value="<?php echo $id_emprunter;?>">
+        <input type="hidden" id="id_livre" name="id_livre" value="<?php echo $id_livre;?>">
 
             <div class="c100">
                 <label for="dateemprunt">Date d'emprunt: </label>

@@ -77,6 +77,7 @@ AND publier.id_editeur=editeur.id_editeur");
                    echo "<td > <img src='". $livre['logo']."'></img></td>";
                      echo "<td >".$livre['autor_name']."</td>";
                     echo "<td >".$livre['editor_name']."</td>";
+                    
                     echo "<td> <a class='btn btn-info btn-xs' href='starter.php?page=formupdatelivre&id=".$livre['id_livre']."'><span class='glyphicon glyphicon-edit'></span> Edit</a></td>";
                     echo "<td > <a class='btn btn-danger btn-xs'href='".$route['deletelivre']."?id=".$livre['id_livre']."'><span class='glyphicon glyphicon-remove'></span> delete</a></td>";
                   echo "</tr>";

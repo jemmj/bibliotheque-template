@@ -1,11 +1,14 @@
 <?php 
-@session_start();
+
+
+/*@session_start();
 include "../security/secure.php";
 include "../includes/database.php";
-include "../includes/define.php";
+include "../includes/define.php";*/
 
 
-$sql = "select id_emprunter, nom FROM emprunter";
+
+
 
 
 ?>
@@ -26,7 +29,7 @@ $sql = "select id_emprunter, nom FROM emprunter";
                 <label for="adresse">Adresse: </label>
                 <input type="adresse" id="adresse" name="adresse">
             </div>
-            
+             
 
  
 

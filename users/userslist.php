@@ -10,8 +10,6 @@ include "../includes/define.php";
 
     <head>
 
-        <title>Cours PHP / MySQL</title>
-
         <meta charset='utf-8'>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

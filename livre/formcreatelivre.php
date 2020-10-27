@@ -59,7 +59,18 @@ include "../includes/database.php";
                 <input type="file" id="logo" name="logo">
             </div>
 
-           
+            <div class="c100">
+                <label for="prix">prix : </label>
+                <input type="prix" id="prix" name="prix">
+            </div>
+             <div class="c100">
+                <label for="description">description : </label>
+                <input type="description" id="description" name="description">
+            </div>
+             <div class="c100">
+                <label for="page">page: </label>
+                <input type="page" id="page" name="page">
+            </div>
             
 
             <div class="c100">

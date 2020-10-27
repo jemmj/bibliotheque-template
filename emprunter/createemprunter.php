@@ -1,12 +1,12 @@
 <?php
 
-@session_start();
+/*@session_start();
  include "../security/secure.php";
   include "../includes/database.php";
-include "../includes/functions.php";  
+include "../includes/functions.php"; */ 
    
             
-   if(@$_POST['dateemprunt']){
+   if(@$_POST['dateemprunt']!="" && @$_POST['id_livre']!="" && @$_POST['id_client']){
 
           
         //--------database parameters
@@ -16,8 +16,8 @@ include "../includes/functions.php";
         
             
             $dateemprunt=$_POST['dateemprunter'];
-        
-        
+        $id_livre=$_POST['id_livre'];
+        $id_client=$_POST['id_client'];
        
 
             
@@ -29,13 +29,14 @@ include "../includes/functions.php";
                       
           
             
-                        $sql = "INSERT INTO emprunter(dateemprunt) VALUE (:dateemprunt)";
+                      $sql = "INSERT INTO emprunter(dateemprunt,id_livre,id_client) VALUE (:dateemprunt,:id_livre,:id_client)";
                     
                 $sth= $dbco->prepare( $sql);
                $params=array(
         
                                     ':dateemprunt' => $dateemprunt,
-                                    
+                                    ':id_livre' => $id_livre,
+                                    ':id_client' => $id_client,
        );        
    
    $sth->execute($params); 

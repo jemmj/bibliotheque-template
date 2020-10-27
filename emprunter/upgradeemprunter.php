@@ -1,8 +1,9 @@
 <?php
-session_start();
-include "../security/secure.php";
-include "../includes/database.php";
-include "../includes/functions.php";
+
+//session_start();
+//include "../security/secure.php";
+//include "../includes/database.php";
+//include "../includes/functions.php";
 
   if(@$_POST['id_emprunter']!=""){
 
@@ -10,7 +11,8 @@ include "../includes/functions.php";
 
 
 
-		
+		$id_emprunter = $_POST['id_emprunter'];
+			
 			$dateemprunt=$_POST['dateemprunt'];
 			
 					

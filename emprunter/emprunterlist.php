@@ -1,8 +1,9 @@
 <?php
 
-@session_start(); 
-include "../security/secure.php";
-include "../includes/define.php";
+
+/*@session_start(); */
+/*include "../security/secure.php";*/
+/*include "../includes/define.php";*/
 include "../includes/database.php";
 ?>
 <!DOCTYPE html>
@@ -71,10 +72,13 @@ include "../includes/database.php";
                 foreach ($resultat as $row => $emprunter){
 
              echo"<tr>";
-                    
+
+             
+                    echo "<td >".$emprunter['id_livre']."</td>";
+                    echo "<td >".$emprunter['id_client']."</td>";
                     echo "<td >".$emprunter['dateemprunt']."</td>";
-                    echo "<td> <a class='btn btn-info btn-xs' href='starter.php?page=emprunter&id=".$emprunter['id_emprunter']."'><span class='glyphicon glyphicon-edit'></span> Edit</a></td>";
-                    echo "<td > <a class='btn btn-danger btn-xs'href='".$route['emprunter']."?id=".$emprunter['id_emprunter']."'><span class='glyphicon glyphicon-remove'></span> delete</a></td>";
+                    echo "<td> <a class='btn btn-info btn-xs' href='starter.php?page=formupgradeemprunter&id=".$emprunter['id_emprunter']."'><span class='glyphicon glyphicon-edit'></span> Edit</a></td>";
+                    echo "<td > <a class='btn btn-danger btn-xs'href='".$route['deleteemprunter']."?id=".$emprunter['id_emprunter']."'><span class='glyphicon glyphicon-remove'></span> delete</a></td>";
                   echo "</tr>";
 
 

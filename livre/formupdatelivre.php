@@ -16,6 +16,9 @@ $result = $sth->fetch(PDO::FETCH_ASSOC);
 $titre=$result['titre'];
 $genre=$result['genre'];
 $logo=$result['logo'];
+$prix=$result['prix'];
+$description=$result['description'];
+$page=$result['page'];
 
          $action=$route["updatelivre"];
                  $titreForm=" MODIFIER LIVRE ";
@@ -89,6 +92,18 @@ $logo=$result['logo'];
             <div class="col-12">
                 <label for="logo">logo : </label>
                 <input type="file" id="logo" name="logo" value="<?php echo $logo;?>">
+            </div>
+            <div class="col-12">
+                <label for="prix">prix : </label>
+                <input type="prix" id="prix" name="prix" value="<?php echo $prix;?>">
+            </div>
+            <div class="col-12">
+                <label for="description"> description: </label>
+                <input type="description" id="description" name="description" value="<?php echo $desription;?>">
+            </div>
+            <div class="col-12">
+                <label for="page">page : </label>
+                <input type="page" id=^"page" name="page" value="<?php echo $page;?>">
             </div>
      </div>
 <div class="c100">

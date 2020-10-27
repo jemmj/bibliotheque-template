@@ -15,7 +15,9 @@ include "../includes/database.php";
         $id_auteur = $_POST['id_auteur'];
         $id_editeur=$_POST['id_editeur'];
         $date_publication=$_POST['date_publication'];
-
+        $prix=$_POST['prix'];
+        $description=$_POST['description'];
+        $page=$_POST['page'];
             //$logolivre=$_POST['logolivre'];
             $id_bibliotheque=$_POST['id_bibliotheque'];
             
@@ -27,7 +29,7 @@ include "../includes/database.php";
         
       
             
-                        $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logo) VALUE (:titre,:id_bibliotheque,:genre,:logo)";
+                        $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logo,prix,description,page) VALUE (:titre,:id_bibliotheque,:genre,:logo,:prix,:description,:page)";
                     
                 $sth= $dbco->prepare( $sql);
               
