@@ -57,7 +57,7 @@ include "../includes/database.php";
                
                 
                 /*Sélectionne toutes les valeurs dans la table livre*/
-                $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logo,auteur.nom as autor_name,editeur.nom as editor_name
+                $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logo,livre.description,livre.prix, livre.page,auteur.nom as autor_name,editeur.nom as editor_name
 FROM livre,publier,auteur,editeur
 WHERE publier.id_livre=livre.id_livre
 AND publier.id_auteur=auteur.id_auteur
@@ -67,14 +67,17 @@ AND publier.id_editeur=editeur.id_editeur");
                 /*Retourne un tableau associatif pour chaque entrée de notre table
                  *avec le nom des colonnes sélectionnées en clefs*/
                 
-    $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
+    $resultat = $sth->fetchall(PDO::FETCH_ASSOC);
 
                 foreach ($resultat as $row => $livre){
 
              echo"<tr>";
                     echo "<td >".$livre['titre']."</td>";
                     echo "<td >".$livre['genre']."</td>";
-                   echo "<td > <img src='". $livre['logo']."'></img></td>";
+                   echo "<td > <img src='../uploads/". $livre['logo']."'></img></td>";
+                    echo "<td >".$livre['description']."</td>";
+                    echo "<td >".$livre['prix']."</td>";
+                     echo "<td >".$livre['page']."</td>";
                      echo "<td >".$livre['autor_name']."</td>";
                     echo "<td >".$livre['editor_name']."</td>";
                     

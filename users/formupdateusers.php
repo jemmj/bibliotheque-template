@@ -12,7 +12,7 @@ $sql = "select *  FROM users WHERE id_users='$id_users'";
 $sth = $dbco->prepare($sql);
 $sth->execute();
 
-
+ $result = $sth->fetch(PDO::FETCH_ASSOC);
 
 $id_users=$result['id_users'];
 $prenom=$result['prenom'];
@@ -22,7 +22,7 @@ $sexe=$result['sexe'];
 $age=$result['age'];
 $pays=$result['pays'];                                      
 $password = $result['password'];
-$role = $result['admin'];                  
+$role = $result['role'];                  
                     
 ?>
 

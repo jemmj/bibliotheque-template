@@ -20,6 +20,7 @@ try{
 
 
 $sql = "UPDATE editeur set nom=:nom,adresse=:adresse WHERE id_editeur=:id_editeur";
+$sth = $dbco->prepare($sql);
 $params=array(
 
                                     ':nom' => $nom,

@@ -2,6 +2,7 @@
 include "../security/secure.php";
 include "../includes/database.php";
 
+include "../includes/define.php";
 
 
             
@@ -44,7 +45,7 @@ include "../includes/database.php";
 ?>
 <h1>Formulaire HTML</h1>
         
-        <form action="?page=createlivre" method="post" enctype="multipart/form-data">
+        <form action="<?php echo $route['createlivre'];?>" method="post" enctype="multipart/form-data">
             <div class="c100">
                 <label for="titre">titre : </label>
                 <input type="text" id="titre" name="titre">

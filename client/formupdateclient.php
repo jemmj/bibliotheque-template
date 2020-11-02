@@ -7,13 +7,13 @@ include "../includes/define.php";
 $id_client=$_GET['id'];
 
 
-$sql = "select *  FROM client WHERE id_client='$id_client'";
+$sql = "select * FROM client WHERE id_client='$id_client'";
 
 $sth = $dbco->prepare($sql);
-
 $sth->execute();
-$result = $sth->fetch(PDO::FETCH_ASSOC);
-$id_client=$result['id_client'];
+
+$result = $sth->Fetch(PDO::FETCH_ASSOC);
+
 $nom=$result['nom'];
 $prenom=$result['prenom'];
 $adresse=$result['adresse'];
@@ -22,7 +22,7 @@ $adresse=$result['adresse'];
 
 		  	      <link rel="stylesheet" href="css/style.css">
 
-<h1>Formulaire HTML</h1>
+<h1>Formulaire client</h1>
 
         <form action="<?php echo $route["updateclient"]; ?>"method="post">
 
