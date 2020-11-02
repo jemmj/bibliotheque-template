@@ -2,7 +2,7 @@
 @session_start();
 include "../security/secure.php";
 include "../includes/database.php";
-    
+include "../includes/functions.php"; 
    
             
    if(@$_POST['titre']!="" && @$_POST['genre']!="" && @$_POST['id_bibliotheque']!="" ){
@@ -25,13 +25,25 @@ include "../includes/database.php";
             
             
            try{
-   
-        
-      
+   $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logo,prix,description,page) VALUE (:titre,:id_bibliotheque,:genre,:logo,:prix,:description,:page)";
+    
+                 $sth= $dbco->prepare( $sql); 
+$paramslivre=array(
+
+                                ':titre' => $titre,
+                                ':genre' => $genre,
+                                ':prix' => $prix,
+                                ':logo' => $logo,                 
+                              ':id_bibliotheque' => $id_bibliotheque,
+                              ":page"=>$page,
+                              ":description"=>$description
+                  );
+
             
-                        $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logo,prix,description,page) VALUE (:titre,:id_bibliotheque,:genre,:logo,:prix,:description,:page)";
+                        
                     
-                $sth= $dbco->prepare( $sql);
+               
+                 $sth->execute($paramslivre);
               
         $id_livre=$dbco->lastInsertId();
         

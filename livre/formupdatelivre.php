@@ -99,11 +99,11 @@ $page=$result['page'];
             </div>
             <div class="col-12">
                 <label for="description"> description: </label>
-                <input type="description" id="description" name="description" value="<?php echo $desription;?>">
+                <input type="description" id="description" name="description" value="<?php echo $description;?>">
             </div>
             <div class="col-12">
                 <label for="page">page : </label>
-                <input type="page" id=^"page" name="page" value="<?php echo $page;?>">
+                <input type="page" id="page" name="page" value="<?php echo $page;?>">
             </div>
      </div>
 <div class="c100">

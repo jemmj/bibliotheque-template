@@ -5,7 +5,6 @@ include "../includes/database.php";
 include "../includes/define.php";
 
 
-$sql = "select id_editeur, nom FROM editeur";
 
 
 ?>

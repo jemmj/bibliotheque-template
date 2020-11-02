@@ -18,7 +18,7 @@ include "../includes/functions.php";
 try{
 
 $sql = "UPDATE auteur set nom=:nom,prenom=:prenom,nationalite=:nationalite WHERE id_auteur=:auteur";
-
+$sth = $dbco->prepare($sql);
 $params=array(
 
                                   

@@ -39,14 +39,16 @@ border:	solid black 2px;
 background:black;	
 	
 }
-.livrecard
+.card2 livrecard
 {
+	padding:100px;
+
 	top:100px;
 -webkit-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 -moz-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 }
-.livrecard img {
+.card2 livrecard img {
 	width:100px;
 	height:75px;
 }

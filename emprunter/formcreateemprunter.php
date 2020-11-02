@@ -1,11 +1,10 @@
 <?php 
 
 
-/*@session_start();
+@session_start();
 include "../security/secure.php";
 include "../includes/database.php";
-include "../includes/define.php";*/
-
+include "../includes/define.php";
 
 
 
@@ -20,7 +19,7 @@ include "../includes/define.php";*/
 
 <h1>Formulaire HTML</h1>
         
-        <form action="<?php echo $route["createmprunter"];?>" method="post">
+        <form action="<?php echo $route["createemprunter"];?>" method="post">
             <div class="c100">
                 <label for="nom">Nom : </label>
                 <input type="text" id="nom" name="nom">

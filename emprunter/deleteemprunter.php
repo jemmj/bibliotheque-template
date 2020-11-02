@@ -10,7 +10,7 @@ $id_emprunter=$_GET['id'];
 try{
 	
 
-$sql = "DELETE FROM emprunter WHERE id_emprunter='$id_emprunter'";
+$sql = "DELETE * FROM emprunter WHERE id_emprunter='$id_emprunter'";
 $sth = $dbco->prepare($sql);
 $sth->execute();
        

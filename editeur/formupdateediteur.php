@@ -10,12 +10,16 @@ $id_editeur=$_GET['id'];
 
 $sql = "select *  FROM editeur WHERE id_editeur='$id_editeur'";
 
+
 $sth=$dbco->prepare($sql);
 $sth->execute();
+$result = $sth->fetch(PDO::FETCH_ASSOC);
 
-$id_editeur=$result['id_editeur'];
 $nom=$result['nom'];
 $adresse=$result['adresse'];
+$id_editeur=$result['id_editeur'];
+
+
 
 ?>
 
@@ -42,3 +46,7 @@ $adresse=$result['adresse'];
                 <input type="submit" value="Envoyer">
             </div>
         </form>
+
+
+
+        
