@@ -1,6 +1,12 @@
 <?php
+<<<<<<< HEAD
 include "includes/database.php";  
 include "includes/define.php"; 
+=======
+include "../includes/database.php";  
+
+include "../includes/define.php"; 
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 
 if(@$_GET['id']!=""){
 $id_livre=$_GET['id'];

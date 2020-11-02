@@ -25,9 +25,15 @@ include "../includes/functions.php";
 try{
 
 $sql = "UPDATE livre set titre=:titre,genre=:genre,logo=:logo,id_bibliotheque=:id_bibliotheque,prix=:prix,page=:page,description=:description WHERE id_livre=:id_livre";
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 	$sth = $dbco->prepare($sql);
             $paramslivre=array(     ':titre' => $titre,
                                     ':genre' => $genre,
@@ -51,7 +57,11 @@ $sql = "UPDATE publier set  id_auteur=:id_auteur, id_editeur=:id_editeur, date_p
 
 	$sth = $dbco->prepare($sql);
 
+<<<<<<< HEAD
 $params=array(
+=======
+$paramspublier=array(
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 					':id_auteur'=>$id_auteur,
 					':id_editeur'=>$id_editeur,
 					':date_publication'=>$date_publication    );

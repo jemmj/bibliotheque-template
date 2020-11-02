@@ -41,7 +41,11 @@ $date_publication=$result['date_publication'];
 		  <div class="row">
 		  <div class="col-4">
 		  
+<<<<<<< HEAD
           <img class="card-img-left" src="uploads/"alt="Card image" ><?php echo $logo;?>
+=======
+          <img class="card-img-left" src="uploads/<?php echo $logo;?>"alt="Card image" >
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 		  </div>
 		  <div class="col-8">
            <div class="card-body">

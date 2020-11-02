@@ -35,7 +35,11 @@ echo "<div class='container'> <div class='row'>";
 
 
 
+<<<<<<< HEAD
 $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logo,livre.description,livre.prix,livre.page,auteur.nom as autor_nom,editeur.nom as editor_nom
+=======
+$sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logo,livre.description,livre.prix,livre.page,auteur.nom as autor_name,editeur.nom as editor_name
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 FROM livre,publier,auteur,editeur
 WHERE publier.id_livre=livre.id_livre
 AND publier.id_auteur=auteur.id_auteur
@@ -51,10 +55,16 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 	   ?>
       
 <div class="container">
+<<<<<<< HEAD
   <div class="col-12">
   
         <div class="card livrecard" id="card2">
             <img class="" src="uploads/<?php echo $livre['logo']?>" alt="Card image">
+=======
+  <div class="col-4">
+        <div class="card2 livrecard">
+            <img class="" src="uploads/<?php echo $livre['logo'] ?>" alt="Card image">
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
               <div class="card-body">
                     <h5 class="card-title"><?php echo $livre['titre'] ?></h5>
                   <p class="card-text"><?php echo $livre['genre'] ?> </p>
@@ -71,7 +81,11 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
         
  </div>
 </div>
+<<<<<<< HEAD
 </div>	
+=======
+	
+>>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
 
 <script>
 
