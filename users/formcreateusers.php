@@ -37,8 +37,10 @@ $sql = "select id_users, nom FROM users";
             </div>
             <div class="c100">
                 <label for="email">Email</label>
-                <input class="form-control" type="text" placeholder="Enter your Email adress" name="nom" type="email" id="email" name="email">
-            </div>
+                <input class="form-control" type="text" placeholder="Enter your Email adress" name="email" type="email" id="email" name="email">
+					<span id='error_email' style="color:red"> </span>
+
+		   </div>
             <div class="c100">
                 <label for="age">Age</label>
                 <input class="form-control" type="text" placeholder="Enter your Age" name="nom" type="number" id="age" name="age">
@@ -74,7 +76,8 @@ $sql = "select id_users, nom FROM users";
             </div>
 <div>
     <label for="exampleInputPassword">Password</label>
-<input class="form-control" type="text" placeholder="Password"  name="password" id="password" /><span id='error_password' style="color:red"> </span>
+<input class="form-control" type="text" placeholder="Password"  name="password" id="password" />
+<span id='error_password' style="color:red"> </span>
 <label for="exampleInputRetypepassword">Retypepassword</label>
 <input class="form-control" type="text" placeholder="retypepassword" name="retypepassword" id="retypepassword" /><span id='error_retypepassword' style="color:red"> </span>
 </div>
@@ -95,7 +98,7 @@ return emailReg.test( $email );
 
 $(document).ready(function(){
 
-$("#email").on("blur",function(){
+$("#email").on("input",function(){
 
 var $email= $("#email").val();
 
@@ -206,7 +209,7 @@ $('#error_retypepassword').html("password non indentiques");
 </script>
 
 
-<?
+<?php
    // Vérifier si le formulaire est soumis 
    //if ( isset( $_POST['submit'] ) ) {
      /* récupérer les données du formulaire en utilisant 
@@ -222,3 +225,4 @@ $('#error_retypepassword').html("password non indentiques");
     // echo 'prenom : ' . $prenom . ' Age : ' . $age . ' email  : ' . $email . ' Sexe : ' .$sexe . ' pays : ' . $pays; 
     // exit;
  // }
+?>
