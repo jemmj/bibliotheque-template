@@ -1,22 +1,31 @@
 <?php
     //On démarre une nouvelle session
-@session_start();
-include "../security/secure.php";
+//@session_start();
+//include "../security/secure.php";
 include "../includes/database.php";
-include "../includes/define.php";    /*On utilise session_id() pour récupérer l'id de session s'il existe.
-     *Si l'id de session n'existe  pas, session_id() rnevoie une chaine
-     *de caractères vide*/
+include "../includes/define.php";
+
 $sql = "select id_users, nom FROM users";
 
 
-    ?>
+?>
+  
+<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+  <link rel="stylesheet" href="formulaire.css"/>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 
 
 
 <h1>creation utilisateurs</h1>
-        
+       <div class="container">
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"> 
         <form action="<?php echo $route["createusers"];?>" method="post">
             <div class="c100">
                 <label for="nom">nom : </label>
@@ -62,25 +71,142 @@ $sql = "select id_users, nom FROM users";
                         <option value="canada">Canada</option>
                     </optgroup>
                 </select>
-            </div>        <div class="c100" id="submit">              <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
-</div>
-
+            </div>
 <div>
-    <label for="pass">Password (8 characters minimum):</label>
-    <input type="password" id="pass" name="password"
-           minlength="8" required>
+    <label for="exampleInputPassword">Password</label>
+<input class="form-control" type="text" placeholder="Password"  name="password" id="password" /><span id='error_password' style="color:red"> </span>
+<label for="exampleInputRetypepassword">Retypepassword</label>
+<input class="form-control" type="text" placeholder="retypepassword" name="retypepassword" id="retypepassword" /><span id='error_retypepassword' style="color:red"> </span>
 </div>
                 <input type="submit" value="Envoyer">
-  
-    
-
             </div>
         </form>
+        </div>
+</div>
+</div>
+</div>
+
+<script>
+
+function validateEmail($email) {
+var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+return emailReg.test( $email );
+}
+
+$(document).ready(function(){
+
+$("#email").on("blur",function(){
+
+var $email= $("#email").val();
+
+if(validateEmail($email)){
+
+$.ajax({
+
+url : '../api/checkemail.php',
+type : 'GET',
+data:'email='+$("#email").val(),
+
+dataType : 'text',
+success : function(resultat, statut){
+//alert(resultat);
+if(resultat=="OK"){
+//Mettre la bordure en vert
+$("#email").css('color','green');
+$('#error_email').html("");
+}
+else if(resultat=="KO"){
+//Mettre la bordure en rouge
+$("#email").css('color','red');
+$('#error_email').html("Email already exist");
+}
+},
+
+error : function(resultat, statut, erreur){
+alert(resultat);
+},
+
+complete : function(resultat, statut){
+
+}
 
 
-<?php
+});
+}
+else {
+$('#email').focus();
+$('#error_email').html("Email non Valide");
+}
+
+});
+$("#password").on("input",function(){
+
+var $password= $("#password").val();
+
+
+
+$.ajax({
+
+url : '../api/validatepassword.php',
+type : 'GET',
+data:'password='+$("#password").val(),
+
+dataType : 'text',
+success : function(resultat, statut){
+//alert(resultat);
+if(resultat=="valid"){
+//Mettre la bordure en vert
+$("#password").css('color','green');
+$('#error_password').html("");
+}
+else if(resultat!="valid"){
+//Mettre la bordure en rouge
+$("#password").css('color','red');
+$('#error_password').html("Password not valid");
+}
+},
+
+error : function(resultat, statut, erreur){
+alert(resultat);
+},
+
+complete : function(resultat, statut){
+
+}
+
+});
+
+});
+
+
+$("#retypepassword").on("input",function(){
+var $password= $("#password").val();
+var $retypepassword= $("#retypepassword").val();
+
+
+if($password==$retypepassword)
+{
+$("#retypepassword").css({color :'green', borderColor :'green'});
+$('#error_retypepassword').html("");
+}
+
+else
+{
+$("#retypepassword").css({color :'red', borderColor :'red'});
+$('#error_retypepassword').html("password non indentiques");
+}
+
+
+});
+
+
+
+});
+
+</script>
+
+
+<?
    // Vérifier si le formulaire est soumis 
    //if ( isset( $_POST['submit'] ) ) {
      /* récupérer les données du formulaire en utilisant 

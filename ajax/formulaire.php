@@ -19,10 +19,38 @@
 <input class="form-control"  type="text" placeholder="Enter your Surname" name="prenom" /> <br/>
  <label for="exampleInputEmail1">Email address</label>
 <input class="form-control" type="text" placeholder="Enter your Email adress" name="email" id="email" /> <span id='error_email' style="color:red"> </span><br/>
-<label for="exampleInputPassword">Password</label>
-<input class="form-control" type="text" placeholder="Password"  name="password" id="password" /><span id='error_password' style="color:red"> </span><br/>
+<div class="c100">
+                <label for="age">Age : </label>
+                <input type="number" id="age" name="age">
+            </div>
+            <div class="c100">
+                <input type="radio" id="femme" name="sexe" value="femme">
+                <label for="femme">Femme</label>
+                <label for="homme">Homme</label>
+            <div class="c100">
+                <label for="pays">Pays de résidence :</label>
+                <select id="pays" name="pays">
+                    <optgroup label="Europe">
+                        <option value="france">France</option>
+                        <option value="belgique">Belgique</option>
+                        <option value="suisse">Suisse</option>
+                    </optgroup>
+                    <optgroup label="Afrique">
+                        <option value="algerie">Algérie</option>
+                        <option value="tunisie">Tunisie</option>
+                        <option value="maroc">Maroc</option>
+                        <option value="madagascar">Madagascar</option>
+                        <option value="benin">Bénin</option>
+                        <option value="togo">Togo</option>
+                    </optgroup>
+                    <optgroup label="Amerique">
+                        <option value="canada">Canada</option>
+                    </optgroup>
+                </select><br>
+                
+<input class="form-control" type="text" placeholder="Password"  name="password" id="password" />Password<span id='error_password' style="color:red"> </span>
 <label for="exampleInputRetypepassword">Retypepassword</label>
-<input class="form-control" type="text" placeholder="RetypePassword" name="repassword" id="repassword" /><span id='error_retypepassword' style="color:red"> </span><br/>
+<input class="form-control" type="text" placeholder="RetypePassword" name="repassword" id="repassword" /><span id='error_retypepassword' style="color:red"> </span>
 
 <input type="submit"class="btn btn-primary btn-block btn-sm" name="submit" />
 </form>
@@ -125,7 +153,25 @@ complete : function(resultat, statut){
 });
 
 
+$("#repassword").on("input",function(){
+var $password= $("#password").val();
+var $repassword= $("#repassword").val();
 
+
+if($password==$repassword)
+{
+$("#repassword").css({color :'green', borderColor :'green'});
+$('#error_repassword').html("");
+}
+
+else
+{
+$("#repassword").css({color :'red', borderColor :'red'});
+$('#error_repassword').html("password non indentiques");
+}
+
+
+});
 
 
 

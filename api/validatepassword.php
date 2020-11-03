@@ -1,9 +1,7 @@
 <?php 
 
-<<<<<<< Updated upstream
-echo "valid";
 
-=======
+
 $password=$_GET["password"];
 
 if(strlen($password)< 8){
@@ -15,6 +13,6 @@ echo "valid";
 }
 
 
->>>>>>> Stashed changes
+
 
 ?>

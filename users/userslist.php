@@ -24,9 +24,12 @@ include "../includes/define.php";
 
 <table  class="table table-striped custab">  
 
+<td > <a class='btn btn-success btn-xs'href='starter.php?page=formcreateusers'span class='glyphicon glyphicon-add'></span> ajouter</a></td>
+<table  class="table table-striped custab">  
  <?php
            
-            
+        
+
             try{
                
                 

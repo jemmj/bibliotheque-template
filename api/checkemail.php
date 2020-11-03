@@ -1,6 +1,8 @@
 <?php
 
-include "database.php";
+
+include "../security/secure.php";
+include "../includes/database.php";
 
 @$email=$_GET["email"];
 

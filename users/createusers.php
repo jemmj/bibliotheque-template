@@ -1,5 +1,5 @@
 <?php
-    //On démarre une nouvelle session
+ //On démarre une nouvelle session
 @session_start();
     /*On utilise session_id() pour récupérer l'id de session s'il existe.
      *Si l'id de session n'existe  pas, session_id() rnevoie une chaine
@@ -107,8 +107,8 @@ include "../includes/functions.php";
                 $sth->execute($paramsAuteur);
                  $id_users=$dbco->lastInserId();
 
-      header('Location:../admin/starter.php?page=userslist');          // $conn->exec($sql);
-                echo 'Entrée ajoutée dans la table';
+                // $conn->exec($sql);
+             
                 
             }
             /*On capture les exceptions si une exception est lancée et on affiche
@@ -118,5 +118,5 @@ include "../includes/functions.php";
             }
         } 
         
-    
+    header('Location:../admin/starter.php?page=userslist');
         ?>
