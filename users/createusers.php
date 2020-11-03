@@ -67,7 +67,7 @@ include "../includes/functions.php";
             la valeur des attributs name comme clé 
             */
             $prenom = $_POST['prenom'];
-			$nom = $_POST['prenom'];
+			$nom = $_POST['nom'];
             $age = $_POST['age'];
             $pays = $_POST['pays'];
             $sexe = $_POST['sexe'];
