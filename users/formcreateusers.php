@@ -33,7 +33,7 @@ $sql = "select id_users, nom FROM users";
             </div>
             <div class="c100">
                 <label for="prenom">Prénom </label>
-                <input class="form-control" type="text" placeholder="Enter your Surnamame" name="surname"  type="text" id="prenom" name="prenom">
+                <input class="form-control" type="text" placeholder="Enter your Surnamame" name="prenom"  type="text" id="prenom" name="prenom">
             </div>
             <div class="c100">
                 <label for="email">Email</label>
@@ -43,9 +43,10 @@ $sql = "select id_users, nom FROM users";
 		   </div>
             <div class="c100">
                 <label for="age">Age</label>
-                <input class="form-control" type="text" placeholder="Enter your Age" name="nom" type="number" id="age" name="age">
+                <input class="form-control" type="text" placeholder="Enter your Age"  type="number" id="age" name="age">
             </div><br>
             <div class="c100">
+			 <label for="sex">Sex</label>
                 <input type="radio" id="femme" name="sexe" value="femme">
                 <label for="femme">Femme</label>
                 <input type="radio" id="homme" name="sexe" value="homme">

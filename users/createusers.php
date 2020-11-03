@@ -58,8 +58,8 @@ include "../includes/functions.php";
         
         <h1>Bases de données MySQL</h1>  
         <?php
-        
-        if(@$_POST['prenom']!="" && @$_POST['age']!="" && @$_POST['email']!="" && @$_POST['pays']!="" && @$_POST['sexe']!="" && @$_POST['role']!="" && @$_POST['password']!=""){
+       // print_r($_POST);
+        if(@$_POST['prenom']!="" && @$_POST['age']!="" && @$_POST['email']!="" && @$_POST['pays']!="" && @$_POST['sexe']!=""  && @$_POST['password']!=""){
             
         // Vérifier si le formulaire est soumis 
 //        if ( @$_POST['prenom'] !=""  && @$_POST['nom'] !="" ) {
@@ -67,11 +67,12 @@ include "../includes/functions.php";
             la valeur des attributs name comme clé 
             */
             $prenom = $_POST['prenom'];
+			$nom = $_POST['prenom'];
             $age = $_POST['age'];
             $pays = $_POST['pays'];
             $sexe = $_POST['sexe'];
-            $email = $_POST['email'];
-            $role = $_POST['admin'];
+           $email = $_POST['email'];
+            $role = 'admin';
             $password = $_POST['password'];
             
             
@@ -85,12 +86,13 @@ include "../includes/functions.php";
 
                 
            
-                $sth= $dbco->prepare( $sql);
+                //$sth= $dbco->prepare( $sql);
              
         
                 
 				
                 $paramsauteur=array(
+				    ':nom' => $nom,
                     ':prenom' => $prenom,
                     
                     ':age' => $age,
@@ -101,11 +103,13 @@ include "../includes/functions.php";
                     ':email' => $email,
                     
                     ':password' => $password,
-                    ':role' =>"admin",);
-                     $sql = "INSERT INTO Users(Prenom,age,pays,sexe,email,role,password) VALUE (:prenom,:age,:pays,:sexe,:email,:admin,:password)";
-                $sth->$dbco->prepare($sql);
-                $sth->execute($paramsAuteur);
-                 $id_users=$dbco->lastInserId();
+                    ':role' =>"admin");
+					
+                     $sql = "INSERT INTO Users(nom,Prenom,age,pays,sexe,email,role,password) 
+					 VALUE (:nom,:prenom,:age,:pays,:sexe,:email,:role,:password)";
+                $sth= $dbco->prepare($sql);
+                $sth->execute( $paramsauteur);
+                 //$id_users=$dbco->lastInserId();
 
                 // $conn->exec($sql);
              
