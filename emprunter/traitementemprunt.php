@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 <?php 
 @session_start();
  
@@ -32,6 +35,7 @@
 				header("Location:../homepage.php");
 				
 				
+<<<<<<< Updated upstream
 =======
 <?php
 include "../includes/database.php";  
@@ -78,4 +82,6 @@ echo "Erreur : " . $e->getMessage();
 }
 }
 >>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
+=======
+>>>>>>> Stashed changes
 ?>

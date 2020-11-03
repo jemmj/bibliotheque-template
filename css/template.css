@@ -39,22 +39,29 @@ border:	solid black 2px;
 background:black;	
 	
 }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 .card livrecard
 {
 	padding:100px;
 	
+<<<<<<< Updated upstream
 =======
 .card2 livrecard
 {
 	padding:100px;
 
 >>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
+=======
+>>>>>>> Stashed changes
 	top:100px;
 -webkit-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 -moz-box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 box-shadow: 4px 25px 46px -9px rgba(0,0,0,0.65);
 }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 img {
 	width:50px;
@@ -64,6 +71,11 @@ img {
 	width:100px;
 	height:75px;
 >>>>>>> 0f25d363c6698f5c84c8fc2b6f887d67ee68559c
+=======
+img {
+	width:50px;
+	height:50px;
+>>>>>>> Stashed changes
 }
 
 
