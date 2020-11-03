@@ -12,7 +12,7 @@ $sql = "select id_users, nom FROM users";
   
 <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 
-  <link rel="stylesheet" href="formulaire.css"/>
+  <link rel="stylesheet" href="../css/formulaire.css"/>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,21 +28,21 @@ $sql = "select id_users, nom FROM users";
     <div class="col-4"> 
         <form action="<?php echo $route["createusers"];?>" method="post">
             <div class="c100">
-                <label for="nom">nom : </label>
-                <input type="text" id="nom" name="nom">
+                <label for="nom">nom </label>
+                <input class="form-control" type="text" placeholder="Enter your Name"type="text" id="nom" name="nom">
             </div>
             <div class="c100">
-                <label for="prenom">Prénom : </label>
-                <input type="text" id="prenom" name="prenom">
+                <label for="prenom">Prénom </label>
+                <input class="form-control" type="text" placeholder="Enter your Surnamame" name="surname"  type="text" id="prenom" name="prenom">
             </div>
             <div class="c100">
-                <label for="email">Email : </label>
-                <input type="email" id="email" name="email">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" placeholder="Enter your Email adress" name="nom" type="email" id="email" name="email">
             </div>
             <div class="c100">
-                <label for="age">Age : </label>
-                <input type="number" id="age" name="age">
-            </div>
+                <label for="age">Age</label>
+                <input class="form-control" type="text" placeholder="Enter your Age" name="nom" type="number" id="age" name="age">
+            </div><br>
             <div class="c100">
                 <input type="radio" id="femme" name="sexe" value="femme">
                 <label for="femme">Femme</label>
@@ -50,9 +50,9 @@ $sql = "select id_users, nom FROM users";
                 <label for="homme">Homme</label>
                 <input type="radio" id="autre" name="sexe" value="autre">
                 <label for="autre">Autre</label>
-            </div>
+            </div><br>
             <div class="c100">
-                <label for="pays">Pays de résidence :</label>
+                <label for="pays">Pays de résidence</label><br>
                 <select id="pays" name="pays">
                     <optgroup label="Europe">
                         <option value="france">France</option>

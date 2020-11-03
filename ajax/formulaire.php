@@ -1,7 +1,7 @@
   
 <link rel="stylesheet"     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 
-  <link rel="stylesheet" href="formulaire.css"/>
+  <link rel="stylesheet" href="css/formulaire.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,7 +26,11 @@
             <div class="c100">
                 <input type="radio" id="femme" name="sexe" value="femme">
                 <label for="femme">Femme</label>
+                <input type="radio" id="homme" name="sexe" value="homme">
                 <label for="homme">Homme</label>
+                <input type="radio" id="autre" name="sexe" value="autre">
+                <label for="autre">Autre</label>
+            </div>
             <div class="c100">
                 <label for="pays">Pays de résidence :</label>
                 <select id="pays" name="pays">

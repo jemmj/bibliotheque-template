@@ -59,7 +59,7 @@ include "../includes/functions.php";
         <h1>Bases de données MySQL</h1>  
         <?php
         
-        if(@$_POST['prenom']!="" && @$_POST['age']!="" && @$_POST['email']!=""){
+        if(@$_POST['prenom']!="" && @$_POST['age']!="" && @$_POST['email']!="" && @$_POST['pays']!="" && @$_POST['sexe']!="" && @$_POST['role']!="" && @$_POST['password']!=""){
             
         // Vérifier si le formulaire est soumis 
 //        if ( @$_POST['prenom'] !=""  && @$_POST['nom'] !="" ) {
